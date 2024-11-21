@@ -16,16 +16,30 @@ For more information, please contact:
 
 ## Details
 
-### Reproduction instructions
+## Details
 
-#### GitHub Codespaces
+### How to run within a container on the HPC
+
+- Ensure that `"$HOME"/dotfiles/install-hpc.sh` has been run.
+- Switch to the directory in the HPC in which you wish to keep all the repos associated with this project.
+- Run `git clone https://github.com/SATVILab/CompTASA`.
+- Run `cd CompTASA`
+- Run `apptainer-pull`
+- Run `apptainer-vscode`
+- Within VS Code:
+    - In a terminal where the working directory is `CompTASA`, run `repos-git-clone`.
+    - For each analysis/data processing repo (just not this infrastructure repo), e.g. `PipelineGatingIlcTasa`:
+      - Switch to them as your working directory, e.g. `cd ../PipelineGatingIlcTasa`.
+      - Run `config-r-renv-restore`.
+    - In the repo in which you want to work, run `radian` to start `R` and then run code as usual.
+
+### How to run within a container on GitHub Codespaces
 
 - Ensure that the GitHub Codespace has access to the following environment variables:
   - `GH_TOKEN`: Classic PAT for GitHub
 - Open GitHub Codespace
-- Open terminal in repo you wish to run:
-  - Ctrl + Shift + ` (Ctrl + Shift + backtick; backtick often found top-left of keyboard)
-  - Choose repo from drop-down menu.
-- Start `R`: run the command `radian`. Within `R`:
-  - *Restore R packages*: Run `renv::restore(prompt = FALSE)`
-  - *Build project*: Run `projr::projr_build_dev()`
+- In a terminal where the working directory is `CompTASA`, run `repos-git-clone`.
+- For each analysis/data processing repo (just not this infrastructure repo), e.g. `PipelineGatingIlcTasa`:
+  - Switch to them as your working directory, e.g. `cd ../PipelineGatingIlcTasa`.
+  - Run `config-r-renv-restore`.
+- In the repo in which you want to work, run `radian` to start `R` and then run code as usual.
