@@ -16,8 +16,6 @@ For more information, please contact:
 
 ## Details
 
-## Details
-
 ### How to run within a container on the HPC
 
 - Ensure that `"$HOME"/dotfiles/install-hpc.sh` has been run.
@@ -27,7 +25,9 @@ For more information, please contact:
 - Run `apptainer-pull`
 - Run `apptainer-vscode`
 - Within VS Code:
-    - In a terminal where the working directory is `CompTASA`, run `repos-git-clone`.
+    - In a terminal where the working directory is `CompTASA`:
+      - Run `repos-git-clone`
+      - Run `repos-workspace-add`
     - For each analysis/data processing repo (just not this infrastructure repo), e.g. `PipelineGatingIlcTasa`:
       - Switch to them as your working directory, e.g. `cd ../PipelineGatingIlcTasa`.
       - Run `config-r-renv-restore`.
@@ -38,7 +38,9 @@ For more information, please contact:
 - Ensure that the GitHub Codespace has access to the following environment variables:
   - `GH_TOKEN`: Classic PAT for GitHub
 - Open GitHub Codespace
-- In a terminal where the working directory is `CompTASA`, run `repos-git-clone`.
+- In a terminal where the working directory is `CompTASA`:
+  - Run `repos-git-clone`
+  - Run `repos-workspace-add`
 - For each analysis/data processing repo (just not this infrastructure repo), e.g. `PipelineGatingIlcTasa`:
   - Switch to them as your working directory, e.g. `cd ../PipelineGatingIlcTasa`.
   - Run `config-r-renv-restore`.
