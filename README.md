@@ -22,7 +22,7 @@ For more information, please contact:
 - Switch to the directory in the HPC in which you wish to keep all the repos associated with this project.
 - Run `git clone https://github.com/SATVILab/CompTASA`.
 - Run `cd CompTASA`
-- Run `apptainer-pull`
+- Run `apptainer-pull -o SATVILab`
 - Run `apptainer-vscode`
 - Within VS Code:
     - In a terminal where the working directory is `CompTASA`:
